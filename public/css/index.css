@@ -35,7 +35,7 @@ img {
 label.question {
     font-weight: bold;
 }
-table.gridtable {
+table#gridtable {
     font-family: verdana,arial,sans-serif;
     font-size:11px;
     color:#333333;
@@ -43,15 +43,16 @@ table.gridtable {
     border-color: #666666;
     border-collapse: collapse;
     width: 400px;
+    display: none;
 }
-table.gridtable th {
+table#gridtable th {
     border-width: 1px;
     padding: 8px;
     border-style: solid;
     border-color: #666666;
     background-color: #dedede;
 }
-table.gridtable td {
+table#gridtable td {
     border-width: 1px;
     padding: 8px;
     border-style: solid;

@@ -7,8 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-
-    <table class="gridtable">
+    <button type="button" onclick="show()">점수 확인</button>
+    <table id="gridtable">
         <tr>
             <th></th>
             <th>Answer</th>
@@ -58,6 +58,9 @@
         </tr>
     </table>
 <script type='text/javascript'>
+    function show(){
+        document.getElementById('gridtable').style.display="block";
+    }
     var temp = 0 ;
     var length = $('.sum').length;
         $('.sum').each(function(){
