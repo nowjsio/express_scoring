@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your sheet</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <table class="gridtable">
+        <tr>
+            <th></th>
+            <th>Answer</th>
+            <th>Your sheet</th>
+            <th></th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>Test number</td>
+            <td><%= ansdata.seqAnswerSheet %></td>
+            <td><%= retdata.seqReturnSheet %></td>
+            <td></td>
+            <td><input type="text" class="score" value=""/></td>
+        </tr>
+        <tr>
+            <td>Q1</td>
+            <td><%= ansdata.question1 %></td>
+            <td><%= retdata.question1 %></td>
+            <td></td>
+                <% if(ansdata.question1==retdata.question1){%>
+                    <td><input type="hidden" class="sum" value="1">O</td>
+                <% } else { %>
+                    <td><input type="hidden" class="sum" value="0">X</td>
+                <% } %>
+        </tr>
+        <tr>
+            <td>Q2</td>
+            <td><%= ansdata.question2 %></td>
+            <td><%= retdata.question2 %></td>
+            <td></td>
+            <% if(ansdata.question2==retdata.question2){%>
+                <td><input type="hidden" class="sum" value="1">O</td>
+            <% } else { %>
+                <td><input type="hidden" class="sum" value="0">X</td>
+            <% } %>
+        </tr>
+        <tr>
+            <td>Q3</td>
+            <td><%= ansdata.question3 %></td>
+            <td><%= retdata.question3 %></td>
+            <td></td>
+            <% if(ansdata.question3==retdata.question3){%>
+                <td><input type="hidden" class="sum" value="1">O</td>
+            <% } else { %>
+                <td><input type="hidden" class="sum" value="0">X</td>
+            <% } %>
+        </tr>
+    </table>
+<script type='text/javascript'>
+    var temp = 0 ;
+    var length = $('.sum').length;
+        $('.sum').each(function(){
+        temp += +$(this).val();
+    });
+    $('.score').val(`${temp}/${length}`);
+</script>
+</body>
+</html>

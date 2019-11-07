@@ -1,0 +1,27 @@
+CREATE TABLE answerSheet
+(
+	seqAnswerSheet int auto_increment
+		primary key,
+	question1 int not null,
+	question2 int null,
+	question3 int null
+)
+COMMENT '답안 시트입니다.';
+CREATE TABLE returnSheet
+(	id int auto_increment primary key,
+	seqReturnSheet int not null,
+	question1 int not null,
+	question2 int not null,
+	question3 int not null
+)
+COMMENT '제출용 시트입니다.';
+
+INSERT INTO answerSheet (seqAnswerSheet,question1, question2, question3) VALUES (3, 1, 3, 4);
+
+************************************************************************************
+INSERT INTO answerSheet (seqAnswerSheet,question1, question2, question3) VALUES (1, 3, 2, 3);
+INSERT INTO answerSheet (seqAnswerSheet,question1, question2, question3) VALUES (2, 4, 1, 2);
+COMMENT '추가 답안 시트입니다.';
+
+SELECT seqReturnSheet,question1,question2,question3  FROM returnsheet  ORDER BY id DESC LIMIT 1
+COMMENT '제출하였을 때 마지막에 저장되는 시트입니다.';

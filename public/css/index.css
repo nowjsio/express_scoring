@@ -1,0 +1,60 @@
+h1 {
+    color : red;
+}
+#indexPage {
+    font-size: 80px;
+    text-align:center;
+    color:red;
+}
+.score{
+    font-size: 20px;
+    text-decoration: underline;
+    color: red;
+    border: 0;
+    width: 30px;
+    height: 40px;
+}
+div.indexTestMenu input[type=button] {
+    font-size: 30px;
+    width: 200pt;
+    height: 50pt;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+div.indexTestMenu {
+    margin-top: 100pt;
+    text-align: center;
+}
+img {
+    width: 1100px;
+    height: 400px;
+    display: block;
+    margin:0px auto;
+    margin-top: 100px;
+}
+label.question {
+    font-weight: bold;
+}
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+    width: 400px;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
