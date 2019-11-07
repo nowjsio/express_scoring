@@ -24,15 +24,19 @@
     <form action="/score/checking" method="post" onSubmit="return submitCon()">
     
         <input type="hidden" name="pagenumber" value="<%=pageNumber%>" />
+        
         <article>
             <p>
                 <label class="question">Q.1</label> 질문 1번입니다. 정답은 3번입니다.
             </p>
             <div> 
+                
                 <input type="radio" name="q1" value="1"><label>1. A</label>
                 <input type="radio" name="q1" value="2"><label>2. a</label>
                 <input type="radio" name="q1" value="3"><label>3. AaaaAaaaA</label>
                 <input type="radio" name="q1" value="4"><label>4. Argh</label> 
+                <input type="hidden" name="q10" value="0" />
+                
             </div>
         </article>
         <article>
@@ -44,6 +48,7 @@
                 <input type="radio" name="q2" value="2"><label>2. b</label>
                 <input type="radio" name="q2" value="3"><label>3. AbbbABabA</label>
                 <input type="radio" name="q2" value="4"><label>4. Bravo</label>
+                <input type="hidden" name="q20" value="0" />
             </div>
         </article>
         <article>
@@ -55,8 +60,10 @@
                 <input type="radio" name="q3" value="2"><label>2. cc</label>
                 <input type="radio" name="q3" value="3"><label>3. CccCccCcccCCC</label>
                 <input type="radio" name="q3" value="4"><label>4. Chocolate</label>
+                <input type="hidden" name="q30" value="0" />
             </div>
         </article>
+
         <input type="submit" value="정답 제출하기">
     </form>
 </section>
