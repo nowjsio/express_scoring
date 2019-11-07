@@ -3,7 +3,7 @@ const bodyParser = require ( 'body-parser' )
 const indexRouter = require( '../routes/index')
 const testRouter = require( '../routes/testpage' )
 const scoreRouter = require( '../routes/score' )
-const manageRouter = require( '../routes/testpage' )
+const manageRouter = require( '../routes/manage' )
 const app = express();
 const _PORT = 3000;
 
