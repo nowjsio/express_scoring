@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/index.css">
+    
+    <title>Test #<%=pagenum%></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   
+</head>
+<body>
+        <section>
+                <h1>
+                    Test Number <%=pagenum%>
+                </h1>
+            
+              <table id="gridtable" style="display: block;">
+                  <tr>
+                      <th>Test <%=pagenum%></th>
+                      <th>accuracy</th>
+                      <th>rate</th>
+                  </tr>
+                  <tr>
+                       <td>Q1</td>
+                       <td><%=manage_db.Q1%>/<%=manage_db.total%></td>
+                       <td><%=rate_accuracy(manage_db.Q1,manage_db.total)%></td>
+                  </tr>
+                  <tr>
+                       <td>Q2</td>
+                       <td><%=manage_db.Q2%>/<%=manage_db.total%></td>
+                       <td><%=rate_accuracy(manage_db.Q2,manage_db.total)%></td>
+                  </tr>
+                  <tr>
+                       <td>Q3</td>
+                       <td><%=manage_db.Q3%>/<%=manage_db.total%></td>
+                       <td><%=rate_accuracy(manage_db.Q3,manage_db.total)%></td>
+                  </tr>               
+              </table>
+              <form action ="/manage/createpageid" method="post">
+            
+                <select name="testid" id="ok">
+                    <option value="0">Select ID</option>
+                    <% for(var i=0; i<manage_id.length;i++) { %>
+                        <option value = "<%=manage_id[i].id%>"><%=manage_id[i].id%></option>
+                    <% } %>
+                </select>
+                <input type="hidden" name="page_num" value="<%=pagenum%>" />  
+              </form>
+              <script>
+              $('#ok').change(function(){
+                if($('#ok').val() == 0) {
+                    alert('select ID !')
+                } else this.form.submit();
+              })
+              </script>
+
+            </section>
+
+</body>
+</html>
+
+

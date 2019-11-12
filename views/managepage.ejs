@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Manage Page</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <body>
-    <h1>Manage page</h1>
+    <h1>Manage Page</h1>
+    <form action="/manage/createtestpage" method="post">
+        <select name="test" id="ok">
+            <option value="0">Select Test Page</option>
+            <option value="1">Test 1</option>
+            <option value="2">Test 2</option>
+            <option value="3">Test 3</option>
+            
+        </select>
+    </form>
+        <script>
+           $('#ok').change(function(){
+               if($('#ok').val()==0){
+                   alert('select test page number!')
+               }
+               else this.form.submit();
+               
+           })
+        </script>
 </body>
 </html>

@@ -25,3 +25,50 @@ COMMENT '추가 답안 시트입니다.';
 
 SELECT seqReturnSheet,question1,question2,question3  FROM returnsheet  ORDER BY id DESC LIMIT 1
 COMMENT '제출하였을 때 마지막에 저장되는 시트입니다.';
+
+SELECT COUNT(*) FROM answersheet;
+COMMENT '답안 시트의 전체 ROW 수 입니다.'
+
+select seqreturnsheet,count(*) as total  from returnsheet where seqreturnsheet=1; 
+COMMENT 'Test 1에 참가한 모든 인원의 수 입니다.'
+
+select count(*) from returnsheet where question1 =3;
+COMMENT 'Test '
+
+SELECT * FROM answersheet AS A LEFT OUTER JOIN returnsheet AS R ON A.seqanswersheet=R.seqreturnsheet WHERE A.seqanswersheet=1;
+COMMENT '답안 시트1과와 제출시트1의 모든 데이터를 비교하는 테이블입니다.'
+
+select id,seqreturnsheet,question1 from returnsheet where question1=(select question1 from answersheet where seqanswersheet=1);
+COMMENT 'Test 1에 참가하여 1번문제의 정답을 맞춘 ID table'
+
+select id from returnsheet r where r.seqreturnsheet=1;
+COMMENT 'Test1에 참가한 모든 ID'
+
+select id from returnsheet r where r.seqreturnsheet=2;
+COMMENT 'Test2에 참가한 모든 ID'
+
+select id from returnsheet r where r.seqreturnsheet=3;
+COMMENT 'Test3에 참가한 모든 ID'
+
+select
+    a.seqAnswersheet TestpageNumber,
+    sum(a.question1 = r.question1) Q1,
+    sum(a.question2 = r.question2) Q2,
+    sum(a.question3 = r.question3) Q3,
+    count(*) total
+from Answersheet a
+inner join Returnsheet r on r.seqReturnsheet = a.seqAnswersheet
+group by a.seqAnswersheet
+COMMENT '각 testpage의 question1,2,3의 정답을 맞춘 id의 수'
+
+select 
+    a.seqAnswersheet TestpageNumber,
+    sum(a.question1 = r.question1) Q1,
+    sum(a.question2 = r.question2) Q2,
+    sum(a.question3 = r.question3) Q3,
+    count(*) total
+from Answersheet a
+inner join Returnsheet r on r.seqReturnsheet = a.seqAnswersheet
+group by a.seqAnswersheet 
+having TestpageNumber=1;
+COMMENT 'Testpage1의 question1,2,3의 정답을 맞춘 id의 수와 참가한 모든 id수'
