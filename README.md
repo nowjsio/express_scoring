@@ -15,7 +15,9 @@ locaclhost:3000/score/yours : checked your sheet
 
 loaclhost:3000/manage : main manage test page
 
-locaclhost:3000/manage/testpage : examine each test page 
+localhost:3000/manage/test1,test2,test3 : Check the accuracy, rate for each test
+
+locaclhost:3000/manage/test1,test2,test3/id : Select id to review sheet
 ```
 
 
